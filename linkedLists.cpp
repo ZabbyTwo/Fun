@@ -1,18 +1,88 @@
 #include <iostream>
+#include "linkedLists.h"
 
-struct node {
-    int data;
-    node* next;
-};
+LinkedList::LinkedList()
+{
+    this->Head = nullptr;
+}
 
-int main(){
-    node newNode1;
-    node newNode2;
+LinkedList::~LinkedList()
+{
+    node *current = this->Head;
+    while (current != nullptr)
+    {
+        node *nextNode = current->getNext();
+        delete current;
+        current = nextNode;
+    }
+    this->Head = nullptr;
+}
 
-    newNode1.data = 123;
-    newNode1.next = &newNode2;
+void LinkedList::insert(int data)
+{
+    node *newNode = new node(data);
 
-    std::cout << newNode1.data << " " << newNode1.next << "\n";
+    if (this->Head == nullptr)
+    {
+        this->Head = newNode;
+        return;
+    }
 
-    return 0;
+    node *current = this->Head;
+    while (current->getNext() != nullptr)
+    {
+        current = current->getNext();
+    }
+    current->setNext(newNode);
+}
+
+bool LinkedList::remove(int targetData)
+{
+    if (this->Head == nullptr)
+        return false;
+
+    if (this->Head->getData() == targetData)
+    {
+        node *toDelete = this->Head;
+        this->Head = this->Head->getNext(); 
+        delete toDelete;                
+        return true;
+    }
+
+    node *current = this->Head;
+    while (current->getNext() != nullptr)
+    {
+        if (current->getNext()->getData() == targetData)
+        {
+            node *toDelete = current->getNext();
+            current->setNext(toDelete->getNext()); 
+            delete toDelete;                       
+            return true;
+        }
+        current = current->getNext();
+    }
+
+    return false; 
+}
+
+void LinkedList::listNodes() const
+{
+    node *current = this->Head;
+    if (current == nullptr)
+    {
+        std::cout << "Liste ist leer.\n";
+        return;
+    }
+
+    while (current != nullptr)
+    {
+        std::cout << "Data: " << current->getData()
+                  << "\t[Next Address: " << current->getNext() << "]\n";
+        current = current->getNext();
+    }
+}
+
+node *LinkedList::getHead() const
+{
+    return this->Head;
 }
