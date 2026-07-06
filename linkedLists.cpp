@@ -44,8 +44,8 @@ bool LinkedList::remove(int targetData)
     if (this->Head->getData() == targetData)
     {
         node *toDelete = this->Head;
-        this->Head = this->Head->getNext(); 
-        delete toDelete;                
+        this->Head = this->Head->getNext();
+        delete toDelete;
         return true;
     }
 
@@ -55,14 +55,14 @@ bool LinkedList::remove(int targetData)
         if (current->getNext()->getData() == targetData)
         {
             node *toDelete = current->getNext();
-            current->setNext(toDelete->getNext()); 
-            delete toDelete;                       
+            current->setNext(toDelete->getNext());
+            delete toDelete;
             return true;
         }
         current = current->getNext();
     }
 
-    return false; 
+    return false;
 }
 
 void LinkedList::listNodes() const
@@ -76,8 +76,7 @@ void LinkedList::listNodes() const
 
     while (current != nullptr)
     {
-        std::cout << "Data: " << current->getData()
-                  << "\t[Next Address: " << current->getNext() << "]\n";
+        std::cout << "Data: " << current->getData() << "\t[Next Address: " << current->getNext() << "]\n";
         current = current->getNext();
     }
 }
