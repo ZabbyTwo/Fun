@@ -9,11 +9,13 @@ protected:
     std::string marke;
 
 public:
-    Fahrzeug(std::string marke)
-    {
-        this->marke = marke;
-        this->geschwindigkeit = 0;
-    }
+    // Fahrzeug(std::string marke)
+    // {
+    //     this->marke = marke;
+    //     this->geschwindigkeit = 0;
+    // }
+
+    Fahrzeug(std::string marke) : marke(marke), geschwindigkeit(0) {}
 
     virtual void beschleunigen(int wert) = 0;
     virtual void anzeigen() = 0;
@@ -25,10 +27,12 @@ private:
     int anzahlTueren;
 
 public:
-    Auto(std::string marke, int tueren) : Fahrzeug(marke)
-    {
-        this->anzahlTueren = tueren;
-    }
+    // Auto(std::string marke, int tueren) : Fahrzeug(marke)
+    // {
+    //     this->anzahlTueren = tueren;
+    // }
+
+    Auto(std::string marke, int tueren) : Fahrzeug(marke), anzahlTueren(tueren) {}
 
     void beschleunigen(int wert)
     {
@@ -50,14 +54,16 @@ private:
     bool hatGepaecktraeger;
 
 public:
-    Fahrrad(std::string marke, bool hatGepaecktraeger) : Fahrzeug(marke)
-    {
-        this->hatGepaecktraeger = hatGepaecktraeger;
-    }
+    // Fahrrad(std::string marke, bool hatGepaecktraeger) : Fahrzeug(marke)
+    // {
+    //     this->hatGepaecktraeger = hatGepaecktraeger;
+    // }
+
+    Fahrrad(std::string marke, bool hatGepaecktraeger) : Fahrzeug(marke), hatGepaecktraeger(hatGepaecktraeger) {}
 
     void beschleunigen(int wert)
     {
-        this->geschwindigkeit += wert/2;
+        this->geschwindigkeit += wert / 2;
     }
 
     void anzeigen()
