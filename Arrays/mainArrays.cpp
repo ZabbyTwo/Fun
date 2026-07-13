@@ -27,6 +27,7 @@ void printVec(std::vector<int> *vec)
     std::cout << '\n';
 } 
 
+// Bubble Sort
 void sortVecBubble(std::vector<int> &vec)
 {
     for (int i{0}; i + 1 < vec.size(); i++)
