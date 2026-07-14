@@ -18,7 +18,7 @@ public:
     Fahrzeug(std::string marke) : marke(marke), geschwindigkeit(0) {}
 
     virtual void beschleunigen(int wert) = 0;
-    virtual void anzeigen() = 0;
+    virtual void anzeigen() const = 0;
 };
 
 class Auto : public Fahrzeug
@@ -34,12 +34,12 @@ public:
 
     Auto(std::string marke, int tueren) : Fahrzeug(marke), anzahlTueren(tueren) {}
 
-    void beschleunigen(int wert)
+    void beschleunigen(int wert) override
     {
         this->geschwindigkeit += wert;
     }
 
-    void anzeigen()
+    void anzeigen() const override
     {
         std::cout << "Auto" << '\n';
         std::cout << "Marke: " << this->marke << '\n';
@@ -61,12 +61,12 @@ public:
 
     Fahrrad(std::string marke, bool hatGepaecktraeger) : Fahrzeug(marke), hatGepaecktraeger(hatGepaecktraeger) {}
 
-    void beschleunigen(int wert)
+    void beschleunigen(int wert) override
     {
         this->geschwindigkeit += wert / 2;
     }
 
-    void anzeigen()
+    void anzeigen() const override
     {
         std::cout << "Fahrrad" << '\n';
         std::cout << "Marke: " << this->marke << '\n';
@@ -77,7 +77,6 @@ public:
 
 int main()
 {
-    // Basisklassen-Zeiger verwenden, um Polymorphie zu testen
     std::vector<Fahrzeug *> meinFuhrpark;
 
     Auto meinAuto("VW", 5);
