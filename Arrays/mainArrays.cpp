@@ -1,19 +1,23 @@
 #include <iostream>
 #include <vector>
 
-void sortVecBubble(std::vector<int> &vec);
 void printVec(std::vector<int> *vec);
+void vecBubblesort(std::vector<int> &vec);
+void vecBogosort(std::vector<int> &vec);
 
 int main()
 {
     std::vector<int> sortMe{10, 20, 500, 0, 8, 5, 3, 6, 3, 1, 3, 2, 1633, 41, 123, 61};
 
-    // Bubble Sort
-    std::cout << "Before Bubble Sort: " << '\n';
+    // Bubblesort
+    std::cout << "Before Bubblesort: " << '\n';
     printVec(&sortMe);
-    sortVecBubble(sortMe);
-    std::cout << "After Bubble Sort: " << '\n';
+    vecBubblesort(sortMe);
+    std::cout << "After Bubblesort: " << '\n';
     printVec(&sortMe);
+
+    // Bogosort
+    // TODO
 
     return 0;
 }
@@ -25,10 +29,10 @@ void printVec(std::vector<int> *vec)
         std::cout << a << " ";
     }
     std::cout << '\n';
-} 
+}
 
-// Bubble Sort
-void sortVecBubble(std::vector<int> &vec)
+// Bubblesort
+void vecBubblesort(std::vector<int> &vec)
 {
     for (int i{0}; i + 1 < vec.size(); i++)
     {
@@ -42,4 +46,9 @@ void sortVecBubble(std::vector<int> &vec)
             }
         }
     }
+}
+
+// Bogosort
+void vecBogosort(std::vector<int> &vec)
+{
 }
