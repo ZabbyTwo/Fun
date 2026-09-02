@@ -13,6 +13,3 @@ A custom singly linked list implementation featuring proper memory management an
 ## How to Compile and Run
 
 You can compile and run the current Linked List example using `g++` from your terminal:
-
-```bash
-g++ mainLinkedLists.cpp linkedLists.cpp -o mainLinkedLists && ./mainLinkedLists
