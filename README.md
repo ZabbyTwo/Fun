@@ -10,8 +10,6 @@ A custom singly linked list implementation featuring proper memory management an
 * **Remove:** Find and delete specific nodes by their value, safely freeing the memory.
 * **Print/List:** Traverse the list and output the data alongside its next memory address (features German console output).
 
-*(More algorithms like sorting coming soon!)*
-
 ## How to Compile and Run
 
 You can compile and run the current Linked List example using `g++` from your terminal:
