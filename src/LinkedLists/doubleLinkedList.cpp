@@ -13,7 +13,7 @@ struct node
     }
 };
 
-int main()
+void runDoubleLinkedList()
 {
     node *current;
 
@@ -42,5 +42,4 @@ int main()
         std::cout << current->data << '\n';
         current = current->prev;
     }
-    return 0;
 }

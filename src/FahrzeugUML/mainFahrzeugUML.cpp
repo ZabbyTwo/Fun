@@ -9,12 +9,6 @@ protected:
     std::string marke;
 
 public:
-    // Fahrzeug(std::string marke)
-    // {
-    //     this->marke = marke;
-    //     this->geschwindigkeit = 0;
-    // }
-
     Fahrzeug(std::string marke) : marke(marke), geschwindigkeit(0) {}
 
     virtual void beschleunigen(int wert) = 0;
@@ -27,11 +21,6 @@ private:
     int anzahlTueren;
 
 public:
-    // Auto(std::string marke, int tueren) : Fahrzeug(marke)
-    // {
-    //     this->anzahlTueren = tueren;
-    // }
-
     Auto(std::string marke, int tueren) : Fahrzeug(marke), anzahlTueren(tueren) {}
 
     void beschleunigen(int wert) override
@@ -54,11 +43,6 @@ private:
     bool hatGepaecktraeger;
 
 public:
-    // Fahrrad(std::string marke, bool hatGepaecktraeger) : Fahrzeug(marke)
-    // {
-    //     this->hatGepaecktraeger = hatGepaecktraeger;
-    // }
-
     Fahrrad(std::string marke, bool hatGepaecktraeger) : Fahrzeug(marke), hatGepaecktraeger(hatGepaecktraeger) {}
 
     void beschleunigen(int wert) override
@@ -75,7 +59,7 @@ public:
     }
 };
 
-int main()
+void runFahrzeug()
 {
     std::vector<Fahrzeug *> meinFuhrpark;
 
@@ -91,6 +75,4 @@ int main()
         f->anzeigen();
         std::cout << "----------------" << std::endl;
     }
-
-    return 0;
 }

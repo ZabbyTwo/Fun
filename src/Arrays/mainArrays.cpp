@@ -5,7 +5,7 @@ void printVec(std::vector<int> *vec);
 void vecBubblesort(std::vector<int> &vec);
 void vecBogosort(std::vector<int> &vec);
 
-int main()
+void runArrays()
 {
     std::vector<int> sortMe{10, 20, 500, 0, 8, 5, 3, 6, 3, 1, 3, 2, 1633, 41, 123, 61};
 
@@ -18,8 +18,6 @@ int main()
 
     // Bogosort
     // TODO
-
-    return 0;
 }
 
 void printVec(std::vector<int> *vec)
