@@ -3,6 +3,7 @@
 void runArrays();
 void runFahrzeug();
 void runDoubleLinkedList();
+void runStl();
 
 int main()
 {
@@ -16,6 +17,9 @@ int main()
 
     std::cout << "\n--- Running Linked List ---" << '\n';
     runDoubleLinkedList();
+
+    std::cout << "\n--- Running STL ---" << '\n';
+    runStl();
 
     return 0;
 }
