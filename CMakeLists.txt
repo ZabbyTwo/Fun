@@ -9,5 +9,5 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 # Recursively find all .cpp files inside the src folder and its subdirectories
 file(GLOB_RECURSE SRC_FILES "src/*.cpp")
 
-# Create the executable named 'FunApp' bundling all found source files
-add_executable(FunApp ${SRC_FILES})
+# Create the executable named 'Fun' bundling all found source files
+add_executable(Fun ${SRC_FILES})
